@@ -15,30 +15,39 @@ public class SimpleMathTest {
     }
 
 
-
     //addition tests
     @Test
     void testAdditionTwoPositiveNumbers(){
+        //exemplo de método usando o bdd style (given -> when -> then)
+        //given two positive numbers
+        double n1 = 6.2;
+        double n2 = 2;
 
-        double expected = 6.2;
-        double actual = math.addition(6.2, 0);
+        //when we perform the addition
+        double actual = math.addition(n1, n2);
 
+        //then it should return their sum
+        double expected = 8.2;
         assertEquals(expected, actual);
     }
 
     @Test
     void testAdditionTwoNegativeNumbers(){
-        double expected = -4;
+        //bdd style simplificado sem o "given" já que são valores simples e de facil compreensao
+
+        //when
         double actual = math.addition(-1, -3);
 
+        //then
+        double expected = -4;
         assertEquals(expected, actual);
     }
 
     @Test
     void testAdditionNegativeAndPositiveNumbers(){
-        double expected = 7;
         double actual = math.addition(-9, 16);
 
+        double expected = 7;
         assertEquals(expected, actual);
     }
 
@@ -53,33 +62,34 @@ public class SimpleMathTest {
     //subtraction tests
     @Test
     void testSubtractionTwoPositiveNumbers() {
-        double expected = 6.2;
         double actual = math.subtraction(8.2, 2.0);
 
+        double expected = 6.2;
         assertEquals(expected, actual, 0.00000001);
     }
 
     @Test
     void testSubtractionTwoNegativeNumbers() {
-        double expected = 2D;
         double actual = math.subtraction(-1, -3);
 
+        double expected = 2D;
         assertEquals(expected, actual);
     }
 
     @Test
     void testSubtractionNegativeMinusPositive() {
-        double expected = -25D;
         double actual = math.subtraction(-9, 16);
 
+        double expected = -25;
         assertEquals(expected, actual);
     }
 
     @Test
     void testSubtractionPositiveMinusNegative() {
-        double expected = 25;
+
         double actual = math.subtraction(16, -9);
 
+        double expected = 25;
         assertEquals(expected, actual);
     }
 
@@ -94,33 +104,33 @@ public class SimpleMathTest {
     //multiplication tests
     @Test
     void testMultiplicationTwoPositiveNumbers(){
-        double expected = 36;
         double actual = math.multiplication(4, 9);
 
+        double expected = 36;
         assertEquals(expected, actual);
     }
 
     @Test
     void testMultiplicationTwoNegativeNumbers(){
-        double expected = 36;
         double actual = math.multiplication(-6, -6);
 
+        double expected = 36;
         assertEquals(expected, actual);
     }
 
     @Test
     void testMultiplicationPositiveAndNegativeNumbers(){
-        double expected = -42;
         double actual = math.multiplication(-7, 6);
 
+        double expected = -42;
         assertEquals(expected, actual);
     }
 
     @Test
     void testMultiplicationByZero() {
-        double expected = 0;
         double actual = math.multiplication(3, 0);
 
+        double expected = 0;
         assertEquals(expected, actual);
     }
 
@@ -134,45 +144,47 @@ public class SimpleMathTest {
     //division tests
     @Test
     void testDivisionTwoPositiveNumbers() {
-        double expected = 4;
         double actual = math.division(8, 2);
 
+        double expected = 4;
         assertEquals(expected, actual);
     }
 
     @Test
     void testDivisionTwoNegativeNumbers() {
-        double expected = 4;
         double actual = math.division(-8, -2);
 
+        double expected = 4;
         assertEquals(expected, actual);
     }
 
     @Test
     void testDivisionPositiveByNegative() {
-        double expected = -4;
         double actual = math.division(8, -2);
 
+        double expected = -4;
         assertEquals(expected, actual);
     }
 
     @Test
     void testDivisionNegativeByPositive() {
-        double expected = -4;
         double actual = math.division(-8, 2);
 
+        double expected = -4;
         assertEquals(expected, actual);
     }
 
     @Test
     void testDivisionPositiveByZero() {
         double actual = math.division(8.0, 0.0);
+
         assertEquals(Double.POSITIVE_INFINITY, actual);
     }
 
     @Test
     void testDivisionNegativeByZero(){
         double actual = math.division(-8, 0);
+
         assertEquals(Double.NEGATIVE_INFINITY, actual);
     }
 
@@ -180,41 +192,41 @@ public class SimpleMathTest {
     //mean tests
     @Test
     void testMeanTwoPositiveNumbers(){
-        double expected = 20;
         double actual = math.mean(30, 10);
 
+        double expected = 20;
         assertEquals(expected, actual);
     }
 
     @Test
     void testMeanTwoNegativeNumbers(){
-        double expected = -20;
         double actual = math.mean(-30, -10);
 
+        double expected = -20;
         assertEquals(expected, actual);
     }
 
     @Test
     void testMeanNegativeAndPositiveNumbers(){
-        double expected = -10;
         double actual = math.mean(-30, 10);
 
+        double expected = -10;
         assertEquals(expected, actual);
     }
 
     @Test
     void testAverageWithZero() {
-        double expected = 2.5;
         double actual = math.mean(5.0, 0.0);
 
+        double expected = 2.5;
         assertEquals(expected, actual, 0.0000001);
     }
 
     @Test
     void testAverageWithDecimals() {
-        double expected = 4.35;
         double actual = math.mean(3.7, 5.0);
 
+        double expected = 4.35;
         assertEquals(expected, actual, 0.0000001);
     }
 
@@ -233,9 +245,9 @@ public class SimpleMathTest {
     //square root tests
     @Test
     void testSqrtPositiveNumber(){
-        double expected = 4;
         double actual = math.squareRoot(16);
 
+        double expected = 4;
         assertEquals(expected, actual);
     }
 
@@ -250,9 +262,9 @@ public class SimpleMathTest {
 
     @Test
     void testSqrtOfZero(){
-        double expected = 0;
         double actual = math.squareRoot(0);
 
+        double expected = 0;
         assertEquals(expected, actual);
     }
 
