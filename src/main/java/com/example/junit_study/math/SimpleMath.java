@@ -23,6 +23,9 @@ public class SimpleMath {
     }
 
     public double squareRoot(double n){
+        if (n < 0) {
+            throw new IllegalArgumentException("Cannot calculate square root of a negative number");
+        }
         return Math.sqrt(n);
     }
 }
