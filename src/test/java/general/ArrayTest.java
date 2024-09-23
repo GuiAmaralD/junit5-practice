@@ -23,6 +23,7 @@ public class ArrayTest {
     @Test
     @Timeout(value = 15, unit = TimeUnit.MILLISECONDS)
     void testSortPerformance(){
+
         int[] numbers = {25, 8, 21, 32, 3};
         for(int i =0; i < 100000000; i++){
             Arrays.sort(numbers);

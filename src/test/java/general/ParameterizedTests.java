@@ -1,9 +1,6 @@
 package general;
 
 import com.example.junit_study.math.SimpleMath;
-import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.RepetitionInfo;
-import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -74,13 +71,5 @@ public class ParameterizedTests {
                 () -> assertNotNull(fruit),
                 () -> assertTrue(rank > 0)
         );
-    }
-
-    //repeated test
-    @RepeatedTest(4)
-    void repetitionTest(RepetitionInfo info){
-        System.out.println(info.getCurrentRepetition());
-        System.out.println(info.getFailureCount());
-        assertTrue(true);
     }
 }
