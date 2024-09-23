@@ -1,10 +1,13 @@
 package com.example.junit_study.math;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Class used for testing SimpleMath class math operations")
 public class SimpleMathTest {
 
     private SimpleMath math;
@@ -175,17 +178,11 @@ public class SimpleMathTest {
     }
 
     @Test
-    void testDivisionPositiveByZero() {
-        double actual = math.division(8.0, 0.0);
+    void givenTwoNumbers_WhenDividedByZero_ThenShouldThrowException(){
+        double n1 = 6;
+        double n2 = 0;
 
-        assertEquals(Double.POSITIVE_INFINITY, actual);
-    }
-
-    @Test
-    void testDivisionNegativeByZero(){
-        double actual = math.division(-8, 0);
-
-        assertEquals(Double.NEGATIVE_INFINITY, actual);
+        assertThrows(ArithmeticException.class, () -> math.division(n1, n2));
     }
 
 

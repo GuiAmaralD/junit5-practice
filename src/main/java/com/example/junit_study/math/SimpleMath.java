@@ -15,6 +15,9 @@ public class SimpleMath {
     }
 
     public double division(double n1, double n2){
+        if(n2 == 0){
+            throw new ArithmeticException("Cant divide by zero");
+        }
         return n1/n2;
     }
 
